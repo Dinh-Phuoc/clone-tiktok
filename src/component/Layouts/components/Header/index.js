@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleQuestion, faCircleXmark, faCloudUpload, faCoins, faEarthAsia, faEllipsisVertical, faGear, faKeyboard, faSignOut, faSpinner, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faCircleQuestion, faCircleXmark, faCoins, faEarthAsia, faEllipsisVertical, faGear, faKeyboard, faSignOut, faSpinner, faUser } from '@fortawesome/free-solid-svg-icons';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import TippyHeadless from '@tippyjs/react/headless';
@@ -13,6 +13,8 @@ import styles from './Header.module.scss'
 import images from '~/assets/images';
 import AcountItem from '~/component/AccountItem';
 import Menu from '~/component/Popper/Menu';
+import { MessagesIcon, UpLoadIcon } from '~/component/Icons';
+import Image from '~/component/Image';
 
 const cx = classNames.bind(styles)
 
@@ -116,7 +118,12 @@ function Header() {
                         <>
                             <Tippy delay={[0, 200]} content='Upload video' placement='bottom'>
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                    <UpLoadIcon />
+                                </button>
+                            </Tippy>
+                            <Tippy delay={[0, 200]} content='Messages' placement='bottom'>
+                                <button className={cx('action-btn')}>
+                                    <MessagesIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -129,10 +136,11 @@ function Header() {
 
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 src='https://static1.moviewebimages.com/wordpress/wp-content/uploads/2023/10/1200-x-630-11.jpg'
                                 className={cx('user-avata')}
                                 alt='Dinh cao nghe thuat'
+                                fallback="......"
                             />
                         ) : (
                             <button className={cx('more-btn')}>
