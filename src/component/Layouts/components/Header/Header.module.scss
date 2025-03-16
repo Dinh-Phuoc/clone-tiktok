@@ -1,0 +1,127 @@
+.wrapper {
+    --search-border-radius: 92px;
+    --search-height: 48px;
+    --search-top-line: 9px;
+    --search-distance: 52px;
+
+    width: 100%;
+    height: var(--defaultlayoutOutHeaderHeight);
+    box-shadow: 0px 1px 1px rgb(0, 0, 0, 12%);
+    display: flex;
+    justify-content: center;
+}
+
+.inner {
+    height: 100%;
+    width: var(--defaultlayoutOutWidth);
+    display: flex;
+    padding: 0 var(--defaultlayoutOutHorizontalSpace);
+    align-items: center;
+    justify-content: space-between;
+}
+.search,
+.search-result {
+    width: 361px;
+}
+.search {
+    width: 361px;
+    height: var(--search-height);
+    background-color: var(--gray);
+    border-radius: var(--search-border-radius);
+    border: 1.5px solid transparent;
+    padding-left: 16px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+
+    input {
+        height: 100%;
+        color: var(--black);
+        font-size: 1.6rem;
+        border: none;
+        background-color: transparent;
+        flex: 1;
+        caret-color: var(--primary);
+    }
+
+    input:not(:placeholder-shown) ~ .search-btn {
+        color: rgba(22, 24, 35, 0.75);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        height: calc(var(--search-height) - var(--search-top-line) * 2);
+        width: 1px;
+        top: var(--search-top-line);
+        right: var(--search-distance);
+        background-color: rgba(22, 24, 35, 0.12);
+    }
+
+    &:focus-within {
+        border: 1.5px solid rgba(22, 24, 35, 0.2);
+    }
+}
+
+.search-result {
+    padding-top: 8px;
+}
+
+.search-title {
+    color: rgba(22, 24, 35, 0.5);
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 5px 12px;
+}
+
+.clear,
+.loading {
+    position: absolute;
+    right: calc(var(--search-distance) + 16px);
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(22, 24, 35, 0.34);
+}
+
+.search-btn {
+    width: var(--search-distance);
+    height: 100%;
+    font-size: 2rem;
+    color: rgba(22, 24, 35, 0.34);
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+        cursor: pointer;
+    }
+    &:active {
+        background-color: rgba(22, 24, 35, 0.06);
+    }
+}
+.action {
+    display: flex;
+    align-items: center;
+}
+
+.action-btn {
+    background-color: transparent;
+    font-size: 2.2rem;
+    color: #161823;
+    padding: 4px 12px;
+    cursor: pointer;
+}
+
+.user-avata {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 12px;
+    cursor: pointer;
+}
+.more-btn {
+    font-size: 2rem;
+    margin-left: 28px;
+    background-color: transparent;
+    padding: 4px 8px;
+    cursor: pointer;
+}

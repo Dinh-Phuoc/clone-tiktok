@@ -1,0 +1,50 @@
+.content {
+    width: 224px;
+
+    .menu-item {
+        margin-left: 0;
+    }
+}
+
+.menu-popper {
+    padding-bottom: 8px;
+}
+
+.menu-item {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    border-radius: 0;
+    font-weight: 500;
+    padding: 11px 16px;
+    line-height: 1.8rem;
+
+    &.separate {
+        border-top: 1px solid rgba(22, 24, 35, 0.1);
+    }
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+
+.header {
+    position: relative;
+    height: 50px;
+    margin-top: -8px;
+}
+
+.back-btn {
+    height: 100%;
+    width: 50px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.header-title {
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+}
