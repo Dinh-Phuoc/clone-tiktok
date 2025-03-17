@@ -4,8 +4,13 @@
     --search-top-line: 9px;
     --search-distance: 52px;
 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
     width: 100%;
     height: var(--defaultlayoutOutHeaderHeight);
+    background-color: var(--white);
     box-shadow: 0px 1px 1px rgb(0, 0, 0, 12%);
     display: flex;
     justify-content: center;
@@ -19,6 +24,11 @@
     align-items: center;
     justify-content: space-between;
 }
+
+.logoHome {
+    display: flex;
+}
+
 .action {
     display: flex;
     align-items: center;
@@ -27,7 +37,7 @@
 .action-btn {
     background-color: transparent;
     color: #161823;
-    padding: 4px 12px;
+    padding: 4px 10px;
     cursor: pointer;
 }
 

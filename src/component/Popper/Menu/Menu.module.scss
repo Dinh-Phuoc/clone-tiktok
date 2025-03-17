@@ -10,6 +10,10 @@
     padding-bottom: 8px;
 }
 
+.menu-body {
+    overflow-y: auto;
+}
+
 .menu-item {
     display: flex;
     width: 100%;
@@ -30,6 +34,7 @@
 
 .header {
     position: relative;
+    flex-shrink: 0;
     height: 50px;
     margin-top: -8px;
 }
@@ -46,5 +51,5 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
 }
